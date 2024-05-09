@@ -2,7 +2,7 @@ import { ComponentProps } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
 
 const button = tv({
-  base: 'disabled:opacity-50 inline-flex items-center gap-1.5 text-xs font-medium',
+  base: 'disabled:opacity-50 disabled:cursor-no-drop inline-flex items-center gap-1.5 text-xs font-medium',
 
   variants: {
     variant: {
