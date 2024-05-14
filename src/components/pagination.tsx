@@ -17,7 +17,7 @@ interface IPagination {
   perPage: number
 }
 
-export function Pagination({ items, itemsShown: showingItems, pages, page, perPage }: IPagination) {
+export function Pagination({ items, itemsShown, pages, page, perPage }: IPagination) {
   const [, setSearchParams] = useSearchParams()
 
   function firstPage() {
@@ -54,7 +54,7 @@ export function Pagination({ items, itemsShown: showingItems, pages, page, perPa
 
   return (
     <div className="flex text-sm items-center justify-between text-zinc-500">
-      <span>Showing {showingItems} of {items} items</span>
+      <span>Showing {itemsShown} of {items} items</span>
       <div className="flex items-center gap-8">
         <div className="flex items-center gap-2">
           <span>Rows per page</span>
