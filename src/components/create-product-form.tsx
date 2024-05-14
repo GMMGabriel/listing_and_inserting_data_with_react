@@ -50,9 +50,9 @@ export function CreateProductForm() {
 
   const { mutateAsync } = useMutation({
     mutationFn: async ({ name, amount, description }: CreateProductSchema) => {
-      console.log(`{name: ${name.trim()}, amount: ${amount}, description: ${description.trim()}}`)
-      alert('foi')
-      return
+      // console.log(`{name: ${name.trim()}, amount: ${amount}, description: ${description.trim()}}`)
+      // alert('foi')
+      // return
       // delay de 2s
       await new Promise(resolve => setTimeout(resolve, 2000))
 
