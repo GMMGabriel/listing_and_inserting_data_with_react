@@ -713,6 +713,13 @@
       "slug": "new",
       "amount": 10,
       "description": "test test test"
+    },
+    {
+      "id": "11d6",
+      "name": "New product",
+      "slug": "new-product",
+      "amount": 69.99,
+      "description": "Test product"
     }
   ]
 }

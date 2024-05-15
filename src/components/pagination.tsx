@@ -52,6 +52,28 @@ export function Pagination({ items, itemsShown, pages, page, perPage }: IPaginat
     })
   }
 
+  function changePerPage(e: string) {
+    const newTotalPages = Math.ceil(items/Number(e))
+
+    if (page > newTotalPages) {
+      // A página atual é maior que o novo total de páginas, então
+      // atualizamos a página atual para o novo valor de última página.
+      setSearchParams(params => {
+        params.set('per_page', e)
+        params.set('page', newTotalPages.toString())
+        return params
+      })
+      return
+    }
+    // Caso contrário, a página atual ainda está dentro dos limites
+    // de páginas "válidas", que realmente existem. Então não é necessário
+    // a atualização da página, apenas do perPage.
+    setSearchParams(params => {
+      params.set('per_page', e)
+      return params
+    })
+  }
+
   return (
     <div className="flex text-sm items-center justify-between text-zinc-500">
       <span>Showing {itemsShown} of {items} items</span>
@@ -62,10 +84,7 @@ export function Pagination({ items, itemsShown, pages, page, perPage }: IPaginat
           <Select
             defaultValue="10"
             value={perPage.toString()}
-            onValueChange={e => setSearchParams(params => {
-              params.set('per_page', e)
-              return params
-            })}
+            onValueChange={changePerPage}
           >
             <SelectTrigger aria-label="Page" />
             <SelectContent>

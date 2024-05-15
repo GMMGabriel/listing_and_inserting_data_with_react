@@ -53,8 +53,8 @@ export function CreateProductForm() {
       // console.log(`{name: ${name.trim()}, amount: ${amount}, description: ${description.trim()}}`)
       // alert('foi')
       // return
-      // delay de 2s
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      // // delay de 2s
+      // await new Promise(resolve => setTimeout(resolve, 2000))
 
       await fetch('http://localhost:3333/products', {
         method: 'POST',
