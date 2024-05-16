@@ -1,3 +1,4 @@
+import { ComponentProps } from 'react'
 import {
   ChevronLeft,
   ChevronRight,
@@ -5,6 +6,7 @@ import {
   ChevronsRight,
 } from 'lucide-react'
 import { useSearchParams } from 'react-router-dom'
+import { twMerge } from 'tailwind-merge'
 
 import { Button } from './ui/button'
 import { Select, SelectContent, SelectItem, SelectTrigger } from './ui/select'
@@ -17,7 +19,9 @@ interface IPagination {
   perPage: number
 }
 
-export function Pagination({ items, itemsShown, pages, page, perPage }: IPagination) {
+interface PaginationProps extends ComponentProps<'div'> {}
+
+export function Pagination({ items, itemsShown, pages, page, perPage, ...props }: PaginationProps & IPagination) {
   const [, setSearchParams] = useSearchParams()
 
   function firstPage() {
@@ -75,7 +79,7 @@ export function Pagination({ items, itemsShown, pages, page, perPage }: IPaginat
   }
 
   return (
-    <div className="flex text-sm items-center justify-between text-zinc-500">
+    <div {...props} className={twMerge("flex text-sm items-center justify-between text-zinc-500 print:hidden", props.className)}>
       <span>Showing {itemsShown} of {items} items</span>
       <div className="flex items-center gap-8">
         <div className="flex items-center gap-2">

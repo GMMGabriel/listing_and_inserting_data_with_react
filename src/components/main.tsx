@@ -4,6 +4,6 @@ interface MainProps extends ComponentProps<'main'> { }
 
 export function Main(props: MainProps) {
   return (
-    <main {...props} className="max-w-6xl mx-auto py-10 px-4 space-y-5" />
+    <main {...props} className="max-w-6xl mx-auto py-10 px-4 space-y-5 print:py-0 print:space-x-0" />
   )
 }

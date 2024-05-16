@@ -88,7 +88,7 @@ export function Products() {
     <Main className="max-w-6xl mx-auto py-10 px-4 space-y-5">
       {productsResponse && !isLoadingError ? (
         <>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 print:hidden">
             <h1 className="text-xl font-bold">Products</h1>
             <Dialog.Root>
               <Dialog.Trigger asChild>
@@ -109,7 +109,7 @@ export function Products() {
             </Dialog.Root>
           </div>
 
-          <div className='flex items-center justify-between'>
+          <div className='flex items-center justify-between print:hidden'>
             <form onSubmit={e => handleFilter(e)} className="flex items-center gap-2">
               <Input variant='filter'>
                 <Search className='size-3' />
@@ -126,7 +126,9 @@ export function Products() {
               </Button>
             </form>
 
-            <Button>
+            <Button
+            onClick={window.print}
+            >
               <FileDown className='size-3' />
               Export
             </Button>
@@ -154,12 +156,12 @@ export function Products() {
                         <span className='font-medium'>
                           <a href={`/product/${p.slug}`} className='hover:underline'>{p.name}</a>
                         </span>
-                        <span className='text-xs text-zinc-500'>
+                        <span className='text-xs text-zinc-500 print:text-zinc-800'>
                           <a href={`/product/${p.slug}`} className='hover:underline'>{p.slug}</a>
                         </span>
                       </div>
                     </TableCell>
-                    <TableCell className='text-zinc-300'>
+                    <TableCell className='text-zinc-300 print:text-zinc-800'>
                       {format.currency(p.amount, true)}
                     </TableCell>
                     <TableCell className='text-right'>

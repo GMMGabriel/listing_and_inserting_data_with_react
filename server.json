@@ -734,6 +734,13 @@
       "slug": "test-with-a-big-product-name-test-with-a-big-produ",
       "amount": 123456789012.34,
       "description": "This is a test using large strings, to see what it looks like on the current product page layout. This is a test using large strings, to see what it looks like on the current product page layout. This"
+    },
+    {
+      "id": "2164",
+      "name": "Test with new Format currency symbols",
+      "slug": "test-with-new-format-currency-symbols",
+      "amount": 1234567.89,
+      "description": "Test with new Format currency symbols"
     }
   ]
 }
