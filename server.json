@@ -741,6 +741,62 @@
       "slug": "test-with-new-format-currency-symbols",
       "amount": 1234567.89,
       "description": "Test with new Format currency symbols"
+    },
+    {
+      "id": "0f06",
+      "name": "test with reset",
+      "slug": "test-with-reset",
+      "amount": 10,
+      "description": "test test test"
+    },
+    {
+      "id": "3763",
+      "name": "test with reset 2",
+      "slug": "test-with-reset-2",
+      "amount": 10,
+      "description": "test test test"
+    },
+    {
+      "id": "3b23",
+      "name": "test with reset 3",
+      "slug": "test-with-reset-3",
+      "amount": 100,
+      "description": "test test test"
+    },
+    {
+      "id": "2040",
+      "name": "aaa",
+      "slug": "aaa",
+      "amount": 1,
+      "description": "aaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "id": "07bb",
+      "name": "bbb",
+      "slug": "bbb",
+      "amount": 2,
+      "description": "bbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "id": "9a7d",
+      "name": "ccc",
+      "slug": "ccc",
+      "amount": 3,
+      "description": "cccccccccccccccc"
+    },
+    {
+      "id": "6bdf",
+      "name": "ddd",
+      "slug": "ddd",
+      "amount": 4,
+      "description": "ddddddddddddddddd"
+    },
+    {
+      "id": "07fa",
+      "name": "eee",
+      "slug": "eee",
+      "amount": 5,
+      "description": "eeeeeeeeeeeeeee"
     }
   ]
 }

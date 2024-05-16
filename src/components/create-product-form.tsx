@@ -38,6 +38,7 @@ export function CreateProductForm() {
     register,
     handleSubmit,
     watch,
+    reset,
     formState,
     control,
   } = useForm<CreateProductSchema>({
@@ -70,6 +71,8 @@ export function CreateProductForm() {
       queryClient.invalidateQueries({
         queryKey: ['get-products']
       })
+      // Reseta o formulário
+      reset({ name: '', amount: undefined, description: '' })
     }
   })
 
