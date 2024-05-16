@@ -5,7 +5,10 @@ import {
   RouterProvider,
 } from "react-router-dom"
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { App } from './app'
+
+import { Products } from './pages/products'
+import { Product } from './pages/product'
+
 import './index.css'
 
 const queryClient = new QueryClient()
@@ -13,7 +16,11 @@ const queryClient = new QueryClient()
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Products />,
+  },
+  {
+    path: "/product/:slug",
+    element: <Product />,
   },
 ])
 

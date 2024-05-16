@@ -5,15 +5,16 @@ import { keepPreviousData, useQuery, useQueryClient } from '@tanstack/react-quer
 
 import * as Dialog from '@radix-ui/react-dialog'
 
-// import useDebounceValue from './hooks/use-debounce-value'
+// import useDebounceValue from '../hooks/use-debounce-value'
 
-import { Format } from './utilities/format'
+import { Format } from '../utilities/format'
 
-import { Button } from './components/ui/button'
-import { Control, Input } from './components/ui/input'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './components/ui/table'
-import { Pagination } from './components/pagination'
-import { CreateProductForm } from './components/create-product-form'
+import { Main } from '../components/main'
+import { Button } from '../components/ui/button'
+import { Control, Input } from '../components/ui/input'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../components/ui/table'
+import { Pagination } from '../components/pagination'
+import { CreateProductForm } from '../components/create-product-form'
 
 interface IProduct {
   id: string
@@ -23,7 +24,7 @@ interface IProduct {
   description: number
 }
 
-interface IProductResponse {
+interface IProductsResponse {
   first: number
   prev: number | null
   next: number | null
@@ -33,7 +34,7 @@ interface IProductResponse {
   data: IProduct[]
 }
 
-export function App() {
+export function Products() {
   const queryClient = useQueryClient()
   const [searchParams, setSearchParams] = useSearchParams()
   const urlFilter = searchParams.get('filter') ?? ''
@@ -44,7 +45,7 @@ export function App() {
 
   const format = new Format()
 
-  const { data: productsResponse, isLoading, isLoadingError } = useQuery<IProductResponse>({
+  const { data: productsResponse, isLoading, isLoadingError } = useQuery<IProductsResponse>({
     queryKey: ['get-products', urlFilter, page, perPage],
     queryFn: async () => {
       const response = await fetch(`http://localhost:3333/products?_page=${page}&_per_page=${perPage}&name=${urlFilter}`)
@@ -84,7 +85,7 @@ export function App() {
   }
 
   return (
-    <main className="max-w-6xl mx-auto py-10 px-4 space-y-5">
+    <Main className="max-w-6xl mx-auto py-10 px-4 space-y-5">
       {productsResponse && !isLoadingError ? (
         <>
           <div className="flex items-center gap-3">
@@ -186,6 +187,6 @@ export function App() {
           </div>
         </>
       )}
-    </main>
+    </Main>
   )
 }
