@@ -42,7 +42,10 @@ export function CreateProductForm() {
     formState,
     control,
   } = useForm<CreateProductSchema>({
-    resolver: zodResolver(createProductSchema)
+    resolver: zodResolver(createProductSchema),
+    defaultValues: {
+      amount: 0
+    }
   })
 
   const slug = watch('name')
@@ -72,7 +75,7 @@ export function CreateProductForm() {
         queryKey: ['get-products']
       })
       // Reseta o formulário
-      reset({ name: '', amount: undefined, description: '' })
+      reset({ name: '', amount: 0, description: '' })
     }
   })
 
@@ -93,7 +96,7 @@ export function CreateProductForm() {
 
         <p className='text-sm'>
           {/* {window.location.href.slice(0, window.location.href.indexOf('?'))}/product/{slug} */}
-          {window.location.protocol}//{window.location.hostname}:{window.location.port}/product/{slug}
+          {window.location.protocol}//{window.location.hostname}{window.location.port && ':' + window.location.port}/product/{slug}
         </p>
       </div>
 
@@ -122,7 +125,7 @@ export function CreateProductForm() {
               <input
                 type="text"
                 id="amount"
-                value={field.value ? format.currencyInInput(field.value) : ''}
+                value={format.currencyInInput(field.value)}
                 maxLength={18}
                 onChange={e => {
                   let temp = e.target.value.replace(/[^0-9]/g, '')
