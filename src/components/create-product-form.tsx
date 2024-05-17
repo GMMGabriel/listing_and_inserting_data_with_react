@@ -95,7 +95,6 @@ export function CreateProductForm() {
         </Dialog.Description>
 
         <p className='text-sm'>
-          {/* {window.location.href.slice(0, window.location.href.indexOf('?'))}/product/{slug} */}
           {window.location.protocol}//{window.location.hostname}{window.location.port && ':' + window.location.port}/product/{slug}
         </p>
       </div>
