@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-// import test from 'tailwindcss-radix'
 export default {
   content: [
     './src/**/*.tsx',
@@ -36,8 +35,6 @@ export default {
       },
     },
   },
-  plugins: [
-    // test
-  ],
+  plugins: [],
 }
 
