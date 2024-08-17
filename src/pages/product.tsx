@@ -62,7 +62,7 @@ export function Product() {
           <div className="text-center mb-8">
             <Button onClick={handleGoBack}>
               <Undo2 className="size-5" />
-              <span className="text-lg">Voltar</span>
+              <span className="text-lg">Back</span>
             </Button>
           </div>
 

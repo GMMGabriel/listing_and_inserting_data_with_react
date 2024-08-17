@@ -29,7 +29,7 @@ const createProductSchema = z.object({
 
 type CreateProductSchema = z.infer<typeof createProductSchema>
 
-export function CreateProductForm() {
+export function CreateProductForm({ afterSubmit }: { afterSubmit: () => void }) {
   const format = new Format()
 
   const queryClient = useQueryClient()
@@ -38,7 +38,7 @@ export function CreateProductForm() {
     register,
     handleSubmit,
     watch,
-    reset,
+    // reset,
     formState,
     control,
   } = useForm<CreateProductSchema>({
@@ -74,8 +74,11 @@ export function CreateProductForm() {
       queryClient.invalidateQueries({
         queryKey: ['get-products']
       })
-      // Reseta o formulário
-      reset({ name: '', amount: 0, description: '' })
+      afterSubmit()
+      /* como o afterSubmit vai fazer com que o Dialog feche, não precisa mais resetar os campos.
+      // // Reseta o formulário
+      // reset({ name: '', amount: 0, description: '' })
+      */
     }
   })
 
