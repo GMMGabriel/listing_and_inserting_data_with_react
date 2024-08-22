@@ -23,6 +23,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.4",
     "react-router-dom": "^6.23.0",
+    "react-toastify": "^10.0.5",
     "sort-by": "^1.2.0",
     "tailwind-merge": "^2.3.0",
     "tailwind-variants": "^0.2.1",

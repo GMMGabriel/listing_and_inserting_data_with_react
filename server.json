@@ -701,102 +701,18 @@
       "description": "Glasses designed for serving wine."
     },
     {
-      "id": "5150",
-      "name": "Test",
-      "slug": "test",
-      "amount": 5025461.61,
-      "description": "teste teste teste"
-    },
-    {
-      "id": "3c79",
-      "name": "New",
-      "slug": "new",
-      "amount": 10,
-      "description": "test test test"
-    },
-    {
-      "id": "11d6",
-      "name": "New product",
-      "slug": "new-product",
-      "amount": 69.99,
-      "description": "Test product"
-    },
-    {
-      "id": "e11b",
-      "name": "Test with a big product name",
-      "slug": "test-with-a-big-product-name",
-      "amount": 999999999999.99,
-      "description": "This is a test using large strings, to see what it looks like on the current product page layout."
-    },
-    {
-      "id": "1cd0",
-      "name": "Test with a big product name test with a big produ",
-      "slug": "test-with-a-big-product-name-test-with-a-big-produ",
-      "amount": 123456789012.34,
-      "description": "This is a test using large strings, to see what it looks like on the current product page layout. This is a test using large strings, to see what it looks like on the current product page layout. This"
-    },
-    {
-      "id": "2164",
-      "name": "Test with new Format currency symbols",
-      "slug": "test-with-new-format-currency-symbols",
-      "amount": 1234567.89,
-      "description": "Test with new Format currency symbols"
-    },
-    {
-      "id": "0f06",
-      "name": "test with reset",
-      "slug": "test-with-reset",
-      "amount": 10,
-      "description": "test test test"
-    },
-    {
-      "id": "3763",
-      "name": "test with reset 2",
-      "slug": "test-with-reset-2",
-      "amount": 10,
-      "description": "test test test"
-    },
-    {
-      "id": "3b23",
-      "name": "test with reset 3",
-      "slug": "test-with-reset-3",
-      "amount": 100,
-      "description": "test test test"
-    },
-    {
-      "id": "2040",
+      "id": "609f",
       "name": "aaa",
       "slug": "aaa",
-      "amount": 1,
-      "description": "aaaaaaaaaaaaaaaaaaaa"
+      "amount": 9.99,
+      "description": "aaaaaaaaaaaaaaaa"
     },
     {
-      "id": "9a7d",
-      "name": "ccc",
-      "slug": "ccc",
-      "amount": 3,
-      "description": "cccccccccccccccc"
-    },
-    {
-      "id": "6bdf",
-      "name": "ddd",
-      "slug": "ddd",
-      "amount": 4,
-      "description": "ddddddddddddddddd"
-    },
-    {
-      "id": "0aea",
-      "name": "eee",
-      "slug": "eee",
-      "amount": 5,
-      "description": "eeeeeeeeeeeeeeeeee"
-    },
-    {
-      "id": "b335",
-      "name": "qqq",
-      "slug": "qqq",
-      "amount": 1.99,
-      "description": "qqqqqqqqqq"
+      "id": "8aa7",
+      "name": "bbb",
+      "slug": "bbb",
+      "amount": 19.99,
+      "description": "bbbbbbbbbb"
     }
   ]
 }

@@ -2,13 +2,14 @@ import { Controller, useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { Check, Loader2, X } from "lucide-react";
+import { Check, Loader2, X } from 'lucide-react'
 import * as Dialog from '@radix-ui/react-dialog'
+import { MyToasts } from '../utilities/my-toasts'
 
-import generateSlug from '../utilities/slug';
-import { Format } from '../utilities/format';
+import generateSlug from '../utilities/slug'
+import { Format } from '../utilities/format'
 
-import { Button } from "./ui/button";
+import { Button } from './ui/button'
 
 const createProductSchema = z.object({
   name: z.string()
@@ -31,6 +32,7 @@ type CreateProductSchema = z.infer<typeof createProductSchema>
 
 export function CreateProductForm({ afterSubmit }: { afterSubmit: () => void }) {
   const format = new Format()
+  const mt = new MyToasts()
 
   const queryClient = useQueryClient()
 
@@ -75,6 +77,7 @@ export function CreateProductForm({ afterSubmit }: { afterSubmit: () => void }) 
         queryKey: ['get-products']
       })
       afterSubmit()
+      mt.success('Produto adicionado')
       /* como o afterSubmit vai fazer com que o Dialog feche, não precisa mais resetar os campos.
       // // Reseta o formulário
       // reset({ name: '', amount: 0, description: '' })
